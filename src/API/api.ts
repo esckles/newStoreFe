@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from "axios";
 
-const URL = "https://newstorebe.onrender.com";
+const URL = "https://newstorebe.onrender.com/api";
 
 export const signup = async (data: any) => {
   try {
