@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { useState } from "react";
 import { CgSpinner } from "react-icons/cg";
 import { Link, useNavigate } from "react-router-dom";
 import { signup } from "../../API/api";
@@ -72,7 +73,7 @@ const Register = () => {
               />
             </div>
             <button
-              className="px-4 py-4 rounded-md mb-5 bg-slate-400 text-white font-semibold w-full"
+              className="px-4 py-4 rounded-md mb-5 bg-blue-500 text-white font-semibold w-full"
               onClick={handleSubmit}
             >
               {loading ? <CgSpinner /> : "Submit"}

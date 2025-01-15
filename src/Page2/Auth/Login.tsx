@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { CgSpinner } from "react-icons/cg";
-import { data, Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { signin, verifyUser } from "../../API/api";
 import { jwtDecode } from "jwt-decode";
 
@@ -70,7 +70,7 @@ const Login = () => {
               />
             </div>
             <button
-              className="px-4 py-4 rounded-md mb-5 bg-slate-400 text-white font-semibold w-full"
+              className="px-4 py-4 rounded-md mb-5 bg-blue-500 text-white font-semibold w-full"
               onClick={handleSubmit}
             >
               {loading ? <CgSpinner /> : "Submit"}
