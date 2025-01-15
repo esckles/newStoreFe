@@ -15,7 +15,7 @@ export const signup = async (data: any) => {
 
 export const verifyUser = async (userID: string) => {
   try {
-    await axios.get(`${URL}/verify-user/${userID}`).then((res: any) => {
+    return await axios.get(`${URL}/verify-user/${userID}`).then((res: any) => {
       return res.data;
     });
   } catch (error) {
@@ -35,7 +35,7 @@ export const signin = async (data: any) => {
 
 export const Readone = async (userID: any) => {
   try {
-    await axios.get(`${URL}/readone/${userID}`).then((res: any) => {
+    return await axios.get(`${URL}/readone/${userID}`).then((res: any) => {
       return res.data;
     });
   } catch (error) {
@@ -45,7 +45,7 @@ export const Readone = async (userID: any) => {
 
 export const Readall = async (data: any) => {
   try {
-    await axios.get(`${URL}/readall`, data).then((res: any) => {
+    return await axios.get(`${URL}/readall`, data).then((res: any) => {
       return res.data;
     });
   } catch (error) {
@@ -55,9 +55,11 @@ export const Readall = async (data: any) => {
 
 export const forgetPassword = async (email: any) => {
   try {
-    await axios.patch(`${URL}/forget-password`, { email }).then((res: any) => {
-      return res.data;
-    });
+    return await axios
+      .patch(`${URL}/forget-password`, { email })
+      .then((res: any) => {
+        return res.data;
+      });
   } catch (error) {
     return error;
   }
@@ -65,7 +67,7 @@ export const forgetPassword = async (email: any) => {
 
 export const changePassword = async (userID: string, password: string) => {
   try {
-    await axios
+    return await axios
       .patch(`${URL}/change-password/${userID}`, { password })
       .then((res: any) => {
         return res.data;
